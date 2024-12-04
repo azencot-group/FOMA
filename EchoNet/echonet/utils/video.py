@@ -48,12 +48,12 @@ from neptune.utils import stringify_unsupported
 @click.option("--id_dir", type=click.Path(exists=True, file_okay=False), default="./ids", help="Path for intrinsic dimension")
 @click.option("--probabilities_dir", type=click.Path(exists=True, file_okay=False), default="./probabilities", help="Path for probabilities")
 @click.option("--batch_selection", type=str, default="knn", help="Batch selection method (knn, knnp, random)")
-@click.option("--foma_input", type=int, default=1, help="Apply FOMA on input data")
-@click.option("--foma_latent", type=int, default=0, help="Apply FOMA on latent data")
+@click.option("--foma_input", type=int, default=0, help="Apply FOMA on input data")
+@click.option("--foma_latent", type=int, default=1, help="Apply FOMA on latent data")
 @click.option("--estimate_id", type=click.Choice(["0", "1", "2"], case_sensitive=False), default="0", help="Estimate intrinsic dimension (0: dont estimate, 1: entire dataset, 2: each batch)")
-@click.option("--alpha", type=float, default=1.0, help="Alpha value for FOMA")
-@click.option("--rho", type=float, default=0.9, help="Rho value for FOMA")
-@click.option("--small_singular", type=int, default=0, help="Scale the smallest or largest singular values")
+@click.option("--alpha", type=float, default=1.1, help="Alpha value for FOMA")
+@click.option("--rho", type=float, default=0.85, help="Rho value for FOMA")
+@click.option("--small_singular", type=int, default=1, help="Scale the smallest or largest singular values")
 
 def run(
         data_dir=None,
@@ -80,12 +80,12 @@ def run(
         id_dir="./ids",
         probabilities_dir="./probabilities",
         batch_selection="knn",
-        foma_input=1,
-        foma_latent=0,
+        foma_input=0,
+        foma_latent=1,
         estimate_id="0",
-        alpha=1.0,
-        rho=0.9,
-        small_singular=0,
+        alpha=1.1,
+        rho=0.85,
+        small_singular=1,
 ):
     data_dir = "../../EchoNet-Dynamic"
     """Trains/tests EF prediction model.
