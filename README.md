@@ -17,6 +17,7 @@ FOMA is a data-driven approach for data augmentation in regression tasks. Key fe
 
 
 <div align=center><img src="figures/NO2_stability.png" width="90%"></div>
+
 ## Example Usage
 
 ```python
@@ -45,6 +46,42 @@ The code is organized such that all components, except for Echo and PovertyMap, 
 
 
 First, download the datasets from [C-Mixup](https://github.com/yaodongyu/CMixup) following the instructions in their README file. Our setup aligns closely with their approach to ensure a fair comparison. After downloading, place the data folders into `src/data/` and execute the following commands:
+
+`python main.py --dataset Airfoil`
+
+`python main.py --dataset NO2`
+
+`python main.py --dataset TimeSeries-exchange_rate`
+
+`python main.py --dataset TimeSeries-electricity`
+
+`python main.py --dataset RCF_MNIST`
+
+`python main.py --dataset CommunitiesAndCrime`
+
+`python main.py --dataset SkillCraft --method`
+
+`python main.py --dataset Dti_dg --method`
+
+## PovertyMap
+For the "PovertyMap" dataset, we utilized the code from the CMixup repository and adapted it to integrate FOMA into the training process. Begin by navigating to the relevant folder using cd PovertyMap. The dataset will be automatically downloaded when the code is executed. Use the following command to run the code:
+
+`python main.py`
+
+## EchoNet
+For the "Echo" dataset, we utilized the code from the CMixup repository and adapted it to integrate FOMA into the training process. Begin by navigating to the relevant folder using cd EchoNet. 
+You need to follow the download instructions from the CMixup repository. The data set should be placed into `../../EchoNet-Dynamic/` directory.
+
+For the preparation you need to install the echonet environment and complete segmentation tasks by running the commands:
+
+`pip install --upgrade --user .`
+
+`python echonet/__main__.py segmentation --save_video`
+
+
+The command to run FOMA on EchoNet is:
+
+`echonet video  --num_workers 0 --run_test True`
 
 
 ## Citation
