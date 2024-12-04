@@ -4,6 +4,8 @@ Official implementation of "First-Order Manifold Data Augmentation for Regressio
 
 <div align=center><img src="figures/foma.png" width="50%"></div>
 
+
+The repository is cloned from the [C-Mixup Repository](https://github.com/yaodongyu/CMixup) (Yao et al., 2022) and has been modified to incorporate FOMA to the experimental setup.
 ## Overview
 
 FOMA is a data-driven approach for data augmentation in regression tasks. Key features:
@@ -37,18 +39,13 @@ for (X, Y) in loader:
     optimizer.step()
 ```
 
-## Datasets
+## Experiments
 
-We evaluate on the following datasets:
-- Airfoil Self-Noise
-- NO2
-- Exchange-Rate
-- Electricity
-- Echo
-- RCF
-- Crimes
-- PovertyMap
-- DTI
+The code is organized such that all components, except for Echo and PovertyMap, are placed in the `src` folder. Since the Echo and PovertyMap datasets build upon distinct codebases, they are located in the `echo` and `povertymap` folders, respectively.
+
+
+First, download the datasets from [C-Mixup](https://github.com/yaodongyu/CMixup) following the instructions in their README file. Our setup aligns closely with their approach to ensure a fair comparison. After downloading, place the data folders into `src/data/` and execute the following commands:
+
 
 ## Citation
 
