@@ -2,6 +2,8 @@
 
 Official implementation of "First-Order Manifold Data Augmentation for Regression Learning" (ICML 2024)
 
+<div align=center><img src="figures/foma.png" width="50%"></div>
+
 ## Overview
 
 FOMA is a data-driven approach for data augmentation in regression tasks. Key features:
@@ -11,6 +13,8 @@ FOMA is a data-driven approach for data augmentation in regression tasks. Key fe
 - Fully differentiable implementation
 
 
+
+<div align=center><img src="figures/NO2_stability.png" width="90%"></div>
 ## Example Usage
 
 ```python
@@ -24,7 +28,7 @@ def scale(A, k, lam):
 
 # X, Y are in batch x feats
 for (X, Y) in loader:
-    lam = beta.Beta(alpha, alpha).sample()
+    lam = torch.distributions.beta.Beta(alpha, alpha).sample()
     A = torch.concatenate((X, Y), axis=1)
     A = scale(A, k, lam)
     X, Y = A[:, :n], A[:, n:]
