@@ -59,9 +59,9 @@ First, download the datasets from [C-Mixup](https://github.com/yaodongyu/CMixup)
 
 `python main.py --dataset CommunitiesAndCrime`
 
-`python main.py --dataset SkillCraft --method`
+`python main.py --dataset SkillCraft`
 
-`python main.py --dataset Dti_dg --method`
+`python main.py --dataset Dti_dg`
 
 ## PovertyMap
 For the "PovertyMap" dataset, we utilized the code from the CMixup repository and adapted it to integrate FOMA into the training process. Begin by navigating to the relevant folder using cd PovertyMap. The dataset will be automatically downloaded when the code is executed. Use the following command to run the code:
